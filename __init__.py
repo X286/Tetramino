@@ -491,7 +491,7 @@ def __main__ ():
 
                         if len(bglist) -1 == bgcount:
                             bgcount = 0
-                            print bgcount, bglist
+                            
                         else:
                             bgcount += 1
                         background.image = pygame.image.load('res\\' + bglist[bgcount])
