@@ -55,7 +55,7 @@ def ret_figure():
 
 
 def __main__ ():
-    bglist, bgcount = os.listdir ('res'), 0
+    bglist, bgcount = os.listdir ('res'), 5
     pygame.init()
     img = pygame.image.load('tetra.png')
     width, height = 800, 600
@@ -488,10 +488,13 @@ def __main__ ():
                     if counter > 100:
                         counter -= 50
                         pygame.time.set_timer(MoveFigure_down, counter)
-                        bgcount +=1
-                        background.image = pygame.image.load('res\\' + bglist[bgcount])
-                        if len(bglist) == bgcount:
+
+                        if len(bglist) -1 == bgcount:
                             bgcount = 0
+                            print bgcount, bglist
+                        else:
+                            bgcount += 1
+                        background.image = pygame.image.load('res\\' + bglist[bgcount])
 
                 collapse = True
             if collapse == True:
